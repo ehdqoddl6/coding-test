@@ -1,22 +1,30 @@
+import sys
+
+input = sys.stdin.readline
+
 n = int(input())
 
 num = []
 for i in range(n):
     num.append(int(input()))
 
+import heapq
 
 def solution(array):
 
-    if(len(array) <= 1):
-        return array
+    h = []
+
+    for x in array:
+        heapq.heappush(h, x)
+
+    result = []
+
+    while(h):
+        result.append(heapq.heappop(h))
+
+    return result
+
     
-    pivot = array[0]
-    tail = array[1:]
-
-    left_side = [x for x in tail if x <= pivot]
-    right_side = [x for x in tail if x > pivot]
-
-    return solution(left_side) + [pivot] + solution(right_side)
 
 num = solution(num)
 

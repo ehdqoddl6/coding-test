@@ -31,9 +31,10 @@ else:
 
     #index1 = 0
     #j = 0
-
+    print(cal)
     for i in range(len(cal)):
         
+        print('i = ',i)
         if(cal[i] == '-'):
             #print(cal[i+1:])
 
@@ -41,6 +42,7 @@ else:
                 index1 = i + cal[i+1:].index('-')
 
                 for j in range(i+1, index1+1):
+                    print(j)
                     cal[j] = '-'
                 
                 i = index1
