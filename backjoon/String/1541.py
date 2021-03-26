@@ -2,9 +2,8 @@
 
 
 #a = input()
-a = '10+10-10+10-10+10-10+10'
-#a = '55-50+40'
-sum = 0
+#a = '10+10+10+10+10+10+10+010'
+a = '55-50+40'
 
 temp_num = ''
 cal = []
@@ -31,10 +30,9 @@ else:
 
     #index1 = 0
     #j = 0
-    print(cal)
+
     for i in range(len(cal)):
         
-        print('i = ',i)
         if(cal[i] == '-'):
             #print(cal[i+1:])
 
@@ -42,7 +40,6 @@ else:
                 index1 = i + cal[i+1:].index('-')
 
                 for j in range(i+1, index1+1):
-                    print(j)
                     cal[j] = '-'
                 
                 i = index1
@@ -55,13 +52,14 @@ else:
         if(cal[i] == '-'):
             index = i
 
+    if(index == 0 and cal[index] == '-'):
+         for i in range(index+1, len(cal)):
+            cal[i] = '-'
 
-    if(index != 0):
+    elif(index != 0):
         for i in range(index+1, len(cal)):
             cal[i] = '-'
 
-
-    print(cal)
 
     for i in range(len(nums)):
         if(cal[i] == '+'):
