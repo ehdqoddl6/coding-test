@@ -1,15 +1,16 @@
 
 import sys
-from itertools import combinations, permutations
+from itertools import product
 
 input = sys.stdin.readline
 
 n, m = map(int, input().split())
 
+arr = []
+for i in range(1, n+1):
+    arr.append(str(i))
 
-arr =[ i for i in range(1, n+1)]
-
-for x in list(permutations(arr, m)):
+for x in list(product((arr), repeat=m)):
     for i in range(len(x)):
         print(x[i], end=' ')
     
