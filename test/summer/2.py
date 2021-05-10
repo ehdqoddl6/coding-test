@@ -1,6 +1,5 @@
 import heapq
 
-
 def solution(t, r):
     answer = []
     arr = []
@@ -8,9 +7,6 @@ def solution(t, r):
     for i in range(len(t)):
         arr.append((r[i], t[i], i))
     
-    
-
-
     time = 0
     
     while(arr):
@@ -30,8 +26,6 @@ def solution(t, r):
 
         time += 1
 
-            
     return answer
-
 
 print(solution([0,1,3,0], [0,1,2,3]))
